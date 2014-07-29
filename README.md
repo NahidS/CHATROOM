@@ -9,8 +9,8 @@ Chatty is a multithreaded program for instant messaging over a LAN network.
 This is the part where we pretend we know some stuff. Not yet though :(.
 
 ## Contributers
-Nahid S
-Erfan Y
+- Nahid S
+- Erfan Y
 
 ## License
 Do you even need a license for this?!
