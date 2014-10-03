@@ -1,4 +1,4 @@
-# Chatty ![Chatty](img/talk9.png=raw=true "Chatty")
+# Chatty ![](img/talk9.png=raw=true)
 Too lazy to shout *Moooom*? Send an instant message instead!
 
 ## Description
