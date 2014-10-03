@@ -9,6 +9,7 @@ import java.net.Socket;
 public class Server {
 	public static void main(String[] args) throws IOException {
 		int clientNumber = 0;
+		checkArgs(args);
 		int port = Integer.parseInt(args[0]);
 		
 		ServerSocket serverSocket = new ServerSocket(port);
@@ -20,6 +21,14 @@ public class Server {
 		} finally {
 			serverSocket.close();
 		}
+	}
+
+	public static boolean checkArgs(String[] args) {
+		if (args.length == 0) {
+			System.out.println("Forgot the arguments?");
+			return false;
+		}
+		return true;
 	}
 	
 	private static class Capitalizer extends Thread {
