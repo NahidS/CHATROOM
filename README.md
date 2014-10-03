@@ -1,6 +1,5 @@
-# Chatty
+# Chatty ![Chatty](img/talk9.png=raw=true "Chatty")
 Too lazy to shout *Moooom*? Send an instant message instead!
-![Chatty](http://i.imgur.com/yRA77fc.png "Chatty")
 
 ## Description
 Chatty is a multithreaded program for instant messaging over a LAN network. 
