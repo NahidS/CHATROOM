@@ -1,4 +1,4 @@
-# Chatty ![](img/talk9.png?raw=true)
+# Chatty ![](img/talk9.png?raw=true)[![Build Status](https://travis-ci.org/NahidS/CHATROOM.svg?branch=master)](https://travis-ci.org/NahidS/CHATROOM)
 Too lazy to shout *Moooom*? Send an instant message instead!
 
 ## Description
