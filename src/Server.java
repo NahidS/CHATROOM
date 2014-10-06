@@ -9,11 +9,11 @@ import java.net.Socket;
 public class Server {
 	public static void main(String[] args) throws IOException {
 		int clientNumber = 0;
-		checkArgs(args);
-		int port = Integer.parseInt(args[0]);
-		
+		if(!checkArgs(args)) {
+			return;
+		}
+		final int port = Integer.parseInt(args[0]);
 		ServerSocket serverSocket = new ServerSocket(port);
-		
 		try {
 			while(true) {
 				new Capitalizer(serverSocket.accept(), clientNumber++).start();
@@ -23,12 +23,34 @@ public class Server {
 		}
 	}
 
+	/**
+	 * Validate the provided arguments
+	 * @param args - Input arguments 
+	 * @return {@code true} if arguments are valid, otherwise {@code false}
+	 */
 	public static boolean checkArgs(String[] args) {
 		if (args.length == 0) {
-			System.out.println("Forgot the arguments?");
+			System.out.println("Argument is not provided.");
+			usage();
 			return false;
 		}
+		try {
+			Integer.parseInt(args[0]);
+		} catch(NumberFormatException e) {
+			System.out.println("Port number is not a valid number.");
+			return false;
+		}
+		if (args.length > 1) {
+			System.out.println("Extra arguements are ignored.");
+		}
 		return true;
+	}
+	
+	/**
+	 * Print the program usage on the screen
+	 */
+	public static void usage() {
+		System.out.println("Usage: Server <port number>");
 	}
 	
 	private static class Capitalizer extends Thread {
@@ -40,7 +62,6 @@ public class Server {
 			this.clientNumber = clientNumber;
 			System.out.println("Connecting to client number " + clientNumber + " at " + socket);
 		}
-		
 		public void run() {
 			try {
 				BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
