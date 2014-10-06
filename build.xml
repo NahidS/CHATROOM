@@ -1,28 +1,41 @@
-<project>
+<project name="CHATROOM" basedir="." default="main">
+
+    <property name="src.dir"     value="src"/>
+
+    <property name="build.dir"   value="bin"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+
+    <property name="main-class"  value="Server"/>
 
     <target name="clean">
-        <delete dir="bin"/>
+        <delete dir="${build.dir}"/>
     </target>
 
     <target name="compile">
-        <mkdir dir="bin/classes"/>
-        <javac srcdir="src" destdir="bin/classes"/>
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}"/>
     </target>
 
-    <target name="jar">
-        <mkdir dir="bin/jar"/>
-        <jar destfile="bin/jar/Server.jar" basedir="bin/classes">
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
             <manifest>
-                <attribute name="Main-Class" value="Server"/>
+                <attribute name="Main-Class" value="${main-class}"/>
             </manifest>
         </jar>
     </target>
 
-    <target name="run">
-        <java jar="bin/jar/Server.jar" fork="true"/>
+    <target name="run" depends="jar">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
     </target>
 
     <target name="test">
-	<echo message = "This part should be updated later."/>
+        <echo message = "This part should be updated later."/>
     </target>
+
+    <target name="clean-build" depends="clean,jar"/>
+
+    <target name="main" depends="clean,run"/>
+
 </project>
