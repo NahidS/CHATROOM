@@ -12,4 +12,5 @@ This is the part where we pretend we know some stuff. Not yet though :(.
 - Erfan Y
 
 ## License
-Do you even need a license for this?!
+See [LICENSE.md](LICENSE.md).
+
