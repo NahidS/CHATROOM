@@ -11,6 +11,6 @@ This is the part where we pretend we know some stuff. Not yet though :(.
 - Nahid S
 - Erfan Y
 
-## License [![License Badge](http://img.shields.io/badge/license-GPLv3-green.svg)](https://www.gnu.org/licenses/quick-guide-gplv3.html)
+## License [![License Badge](http://img.shields.io/badge/license-GPLv3-red.svg)](https://www.gnu.org/licenses/quick-guide-gplv3.html)
 See [LICENSE.md](LICENSE.md).
 
