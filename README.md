@@ -2,7 +2,7 @@
 Too lazy to shout *Moooom*? Send an instant message instead!
 
 ## Description
-Lancg is a multithreaded program for instant messaging over a LAN network. 
+Lanch is a multithreaded program for instant messaging over a LAN network. 
 
 ## Technical information
 This is the part where we pretend we know some stuff. Not yet though :(.
