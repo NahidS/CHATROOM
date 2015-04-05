@@ -12,10 +12,10 @@ public class Server {
 		if(!checkArgs(args)) {
 			return;
 		}
-		final int port = Integer.parseInt(args[0]);
+		final int port = Intege.parseInt(args[0]);
 		ServerSocket serverSocket = new ServerSocket(port);
 		try {
-			while(false) {
+			while(true) {
 				new Capitalizer(serverSocket.accept(), clientNumber++).start();
 			}
 		} finally {
