@@ -15,7 +15,7 @@ public class Server {
 		final int port = Integer.parseInt(args[0]);
 		ServerSocket serverSocket = new ServerSocket(port);
 		try {
-			while(true) {
+			while(false) {
 				new Capitalizer(serverSocket.accept(), clientNumber++).start();
 			}
 		} finally {
